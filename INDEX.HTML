@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vintage Prestige - Carros Clássicos de Luxo</title>
+  <style>
+    /* RESET & ESTILOS BASE */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #0b0c10;
+      color: #e0e0e0;
+      font-family: 'Georgia', serif;
+      overflow-x: hidden;
+    }
+
+    /* CABEÇALHO FIXO */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 25px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      background: rgba(11, 12, 16, 0.85);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    }
+
+    .logo {
+      color: #c5a059;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: #e0e0e0;
+      text-decoration: none;
+      margin-left: 30px;
+      font-size: 0.9rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #c5a059;
+    }
+
+    /* SEÇÕES EM TELA CHEIA (SCROLL DINÂMICO) */
+    .section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10%;
+      position: relative;
+    }
+
+    /* EFEITO DE SURGIMENTO (SCROLL ANIMATION) */
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(rgba(11, 12, 16, 0.6), rgba(11, 12, 16, 0.9)), 
+                  url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600') center/cover no-repeat fixed;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      color: #fff;
+      margin-bottom: 15px;
+      letter-spacing: 3px;
+    }
+
+    .hero p {
+      color: #c5a059;
+      font-size: 1.2rem;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+    }
+
+    .btn-luxo {
+      padding: 12px 35px;
+      border: 1px solid #c5a059;
+      color: #c5a059;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      transition: all 0.4s ease;
+    }
+
+    .btn-luxo:hover {
+      background-color: #c5a059;
+      color: #0b0c10;
+      box-shadow: 0 0 15px rgba(197, 160, 89, 0.4);
+    }
+
+    /* SEÇÃO DE COLEÇÃO (CARD LAYOUT) */
+    .car-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .car-img {
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid rgba(197, 160, 89, 0.3);
+      filter: grayscale(30%);
+      transition: filter 0.5s ease;
+    }
+
+    .car-card:hover .car-img {
+      filter: grayscale(0%);
+    }
+
+    .car-info h2 {
+      color: #c5a059;
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+    }
+
+    .car-info p {
+      line-height: 1.8;
+      color: #a0a0a0;
+      margin-bottom: 20px;
+    }
+
+    /* RODAPÉ */
+    footer {
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid rgba(197, 160, 89, 0.2);
+      color: #666;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Vintage Prestige</div>
+    <nav>
+      <a href="#inicio">Início</a>
+      <a href="#colecao">Coleção</a>
+      <a href="#experiencia">Experiência</a>
+    </nav>
+  </header>
+
+  <section class="section hero" id="inicio">
+    <div class="reveal active">
+      <h1>A ARTE DA ELEGÂNCIA AUTOMOTIVA</h1>
+      <p>A mais seleta coleção de clássicos raros do mundo.</p>
+      <a href="#colecao" class="btn-luxo">Explorar Acervo</a>
+    </div>
+  </section>
+
+  <section class="section" id="colecao">
+    <div class="car-card reveal">
+      <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=800" alt="Carro Clássico de Luxo" class="car-img">
+      <div class="car-info">
+        <h2>Rolls-Royce Silver Cloud (1955)</h2>
+        <p>Um símbolo inquestionável de opulência e prestígio. Engenharia artesanal britânica em sua forma mais pura, mantida com peças 100% originais e histórico documentado.</p>
+        <a href="#" class="btn-luxo">Solicitar Agendamento</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experiencia">
+    <div class="car-card reveal">
+      <div class="car-info">
+        <h2>Mercedes-Benz 300 SL Gullwing (1954)</h2>
+        <p>Famoso por suas portas asa de gaivota e desempenho visionário. Uma obra de arte mecânica que marcou a história do automobilismo esportivo de alta classe.</p>
+        <a href="#" class="btn-luxo">Ver Galeria Exclusiva</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=800" alt="Carro Esportivo Clássico" class="car-img">
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Vintage Prestige. Todos os direitos reservados. Design para Colecionadores Exigentes.</p>
+  </footer>
+
+  <script>
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.reveal');
+      const windowHeight = window.innerHeight;
+
+      reveals.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const revealPoint = 150;
+
+        if (elementTop < windowHeight - revealPoint) {
+          element.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    // Executa uma vez no carregamento para exibir a hero section
+    revealOnScroll();
+  </script>
+
+</body>
+</html>
