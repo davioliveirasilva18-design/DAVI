@@ -1,11 +1,11 @@
-<!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luxus Automóveis | Superesportivos & Carros de Luxo</title>
-    
-    <!-- Tailwind CSS CDN -->
+    <title>LUXUS AUTOMÓVEIS | High-Performance Gallery</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -13,68 +13,75 @@
                 extend: {
                     colors: {
                         gold: {
-                            400: '#F3E5AB',
+                            300: '#F5E6AD',
+                            400: '#E6CA65',
                             500: '#D4AF37',
-                            600: '#AA7C11',
-                            700: '#8B6508'
+                            600: '#B58D21',
+                            700: '#8C6A10'
                         },
-                        dark: {
-                            900: '#0B0C10',
-                            800: '#1F2833',
-                            700: '#2C3531'
-                        }
+                        obsidian: '#070708',
+                        cardDark: '#121316'
                     },
                     fontFamily: {
-                        serif: ['Playfair Display', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif']
+                        heading: ['Cinzel', 'serif'],
+                        body: ['Inter', 'sans-serif']
                     }
                 }
             }
         }
     </script>
-    
-    <!-- Google Fonts & Font Awesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Fontes & Ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0B0C10;
-            color: #E0E0E0;
+            font-family: 'Inter', sans-serif;
+            background-color: #070708;
+            color: #E2E8F0;
+        }
+        .font-heading {
+            font-family: 'Cinzel', serif;
+        }
+        .gold-glow-hover {
+            transition: all 0.4s ease;
+        }
+        .gold-glow-hover:hover {
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+            border-color: #D4AF37;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(135deg, #D4AF37 0%, #B58D21 100%);
         }
         .gold-gradient-text {
-            background: linear-gradient(135deg, #FFF6D1 0%, #D4AF37 50%, #AA7C11 100%);
+            background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 50%, #8C6A10 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-        .gold-border-glow {
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: all 0.3s ease;
-        }
-        .gold-border-glow:hover {
-            border-color: rgba(212, 175, 55, 0.8);
-            box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
-        }
-        .glass-card {
-            background: rgba(31, 40, 51, 0.6);
-            backdrop-filter: blur(12px);
         }
     </style>
 </head>
 <body class="antialiased selection:bg-gold-500 selection:text-black">
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 left-0 w-full z-40 bg-dark-900/90 backdrop-blur-md border-b border-gold-500/20">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="flex items-center gap-2">
-                <i class="fa-solid fa-crown text-gold-500 text-2xl"></i>
-                <span class="font-serif text-2xl font-bold tracking-widest text-white">LUXUS <span class="gold-gradient-text">AUTOMÓVEIS</span></span>
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 w-full z-50 bg-obsidian/90 backdrop-blur-md border-b border-gold-500/20">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 border border-gold-500 flex items-center justify-center rounded-sm">
+                    <i class="fa-solid fa-gem text-gold-500"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-heading font-black text-xl tracking-[0.2em] text-white">LUXUS</span>
+                    <span class="text-[9px] tracking-[0.4em] text-gold-500 uppercase">Automóveis</span>
+                </div>
             </a>
-            
-            <div class="hidden md:flex gap-8 font-medium text-sm tracking-wider uppercase">
-                <a href="#hero" class="hover:text-gold-500 transition-colors">Início</a>
-                <a href="#catalogo" class="hover:text-gold-500 transition-colors">Coleção</a>
-                <a href="#sobre" class="hover:text-gold-500 transition-colors">Sobre Nós</a>
-                <a href="#contato" class="hover:text
-                
+
+            <nav class="hidden md:flex gap-10 text-xs font-semibold tracking-[0.15em] uppercase text-gray-400">
+                <a href="#showcase" class="hover:text-gold-500 transition-colors">Showroom</a>
+                <a href="#experiencia" class="hover:text-gold-500 transition-colors">Experiência</a>
+                <a href="#comunidade" class="hover:text-gold-500 transition-colors">Comentários</a>
+            </nav>
+
+            <a href="#showcase" class="gold-gradient-bg text-black text-xs font-bold px-6 py-3 tracking-wider uppercase rounded-sm hover:brightness-110 transition-all">
+                Ver Modelos
+            </a>
